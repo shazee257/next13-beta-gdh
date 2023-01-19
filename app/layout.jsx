@@ -1,14 +1,23 @@
+// 'use client';
+
 import './globals.css'
+import { Poppins } from '@next/font/google'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal'],
+});
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html lang="en" className={`${poppins.className} text-[13px]`}>
       <head />
-      <body>{children}</body>
+      <body>
+        <div className='flex-1 min-h-screen'>
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
