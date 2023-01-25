@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
-function fetchAPI({ method, endPoint, data, params }) {
+export default function fetchAPI({ method, endPoint, data, params }) {
     const headers = {
         'Content-Type': 'application/json',
     };
@@ -29,4 +29,4 @@ function fetchAPI({ method, endPoint, data, params }) {
 //     return response;
 // }
 
-export default fetchAPI;
+// export default fetchAPI;

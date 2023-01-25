@@ -3,6 +3,12 @@
 import { DataGrid, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import { useState } from "react";
 import Box from '@mui/material/Box';
+import { Poppins } from '@next/font/google'
+
+const poppins = Poppins({
+    subsets: ['latin'],
+    weight: ['400'],
+});
 
 export default function MuiGrid({ data, columns, clickHanlder }) {
     const [pageSize, setPageSize] = useState(15);
@@ -19,7 +25,7 @@ export default function MuiGrid({ data, columns, clickHanlder }) {
         <DataGrid
             rows={data}
             columns={columns}
-            className="px-10 mt-4 w-full"
+            className='px-10 mt-4 w-full'
             rowsPerPageOptions={[15, 20, 50, 100]}
             pageSize={pageSize}
             onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}

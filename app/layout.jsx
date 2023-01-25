@@ -4,15 +4,15 @@ import { Poppins } from '@next/font/google'
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['200'],
 });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" >
+    <html lang="en" className={`${poppins.className} text-sm`}>
       <head />
-      <body className={`${poppins.className} text-[13px]`}>
-        <div className='flex-1 min-h-screen'>
+      <body>
+        <div className={`${poppins.className} text-sm flex-1 min-h-screen`}>
           {children}
         </div>
       </body>

@@ -1,25 +1,22 @@
-const moment = require('moment');
-// import https from 'https';
-// const axios = require('axios').default;
+import moment from 'moment';
 import { MdOutlineDashboard } from "react-icons/md";
-import { FaUserMd, FaUserInjured, FaUserTie, FaCalendarAlt, FaExchangeAlt, FaCalendarCheck, FaEdit } from "react-icons/fa";
 
-// axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
-// export function fetchApi({ method, endPoint, data, params }) {
-//     const headers = {
-//         'Content-Type': 'application/json',
-//     };
+import {
+    FaUserMd,
+    FaUserInjured,
+    FaUserTie,
+    FaCalendarAlt,
+    FaExchangeAlt,
+    FaCalendarCheck,
+    FaEdit,
+    FaUserEdit,
+    FaThinkPeaks,
+} from "react-icons/fa";
 
-//     const config = {
-//         method,
-//         url: `${process.env.NEXT_PUBLIC_BaseURL}/${endPoint}`,
-//         headers,
-//         params: params ? params : {},
-//         data: data ? data : {},
-//     };
-
-//     return axios(config);
-// }
+import {
+    BiMailSend,
+    BiChat
+} from "react-icons/bi";
 
 export const sidebarMenuItems = {
     admin: [
@@ -63,6 +60,48 @@ export const sidebarMenuItems = {
             title: 'Feedback',
             icon: <FaEdit size={24} />
         },
+        {
+            url: '/admin/profile',
+            title: 'Profile',
+            icon: <FaUserEdit size={24} />
+        },
+    ],
+    role_assistant: [
+        {
+            url: '/assistant',
+            title: 'Dashboard',
+            icon: <MdOutlineDashboard size={24} />
+        },
+        {
+            url: '/assistant/appointments',
+            title: 'Appointments',
+            icon: <FaCalendarAlt size={24} />
+        },
+        {
+            url: '/assistant/patients',
+            title: 'Patients',
+            icon: <FaUserInjured size={24} />
+        },
+        {
+            url: '/assistant/rag-analysis',
+            title: 'RAG Analysis',
+            icon: <FaThinkPeaks size={24} />
+        },
+        {
+            url: '/assistant/transactions',
+            title: 'Transactions',
+            icon: <FaExchangeAlt size={24} />
+        },
+        {
+            url: '/assistant/messages',
+            title: 'Messages',
+            icon: <BiMailSend size={24} />
+        },
+        {
+            url: '/assistant/chat',
+            title: 'Live Chat',
+            icon: <BiChat size={24} />
+        },
     ],
     medical_specialist: [
         {
@@ -76,8 +115,7 @@ export const sidebarMenuItems = {
             icon: <FaUserMd size={24} />
         },
     ],
-    assistant: [],
-    patient: []
+    role_patient: []
 }
 
 export const formatDate = (date) => moment(date).format('DD/MM/YYYY');

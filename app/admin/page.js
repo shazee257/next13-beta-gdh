@@ -8,9 +8,7 @@ import {
 } from 'react-icons/fa';
 import MuiGrid from '@/components/MuiGrid';
 import { cookies } from 'next/headers';
-// import {
-// formatDate
-// } from '@/utils';
+import { formatDate } from '@/utils';
 import fetchAPI from '@/components/fetchAPI';
 
 async function getDashboardData() {
@@ -92,8 +90,7 @@ async function getDashboardData() {
         obj.city = patient.personalDetails.city ? patient.personalDetails.city : 'N/A';
         obj.phone = patient.personalDetails.mobile ? patient.personalDetails.mobile : 'N/A';
         obj.assistantName = patient.createdBy ? patient.createdBy : 'N/A';
-        // obj.createdAt = formatDate(patient.createdAt);
-
+        obj.createdAt = formatDate(patient.createdAt);
         return obj;
     })
 
@@ -122,7 +119,6 @@ export default async function AdminDashboard() {
         { field: "phone", headerName: "Phone", width: 150 },
         { field: "assistantName", headerName: "Assistant Name", width: 200 },
         { field: "createdAt", headerName: "Created At", width: 130 },
-
     ];
 
     return (

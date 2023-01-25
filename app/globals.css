@@ -4,6 +4,11 @@
 
 @layer base {
 
+  * {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px;
+  }
+
   /* html {
     @apply text-sm;
   } */

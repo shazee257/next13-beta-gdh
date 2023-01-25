@@ -1,16 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react'
-// import Logout from './Logout';
+import { useEffect, useState } from 'react';
+import Logout from './Logout';
 
-const Header = () => {
-    const [username, setUsername] = useState("");
+export default function Header() {
+    const [username, setUsername] = useState('');
 
     useEffect(() => {
-        (function getUsername() {
-            const username = localStorage.getItem('firstName');
-            username && setUsername(username);
-        })();
+        const firstName = localStorage.getItem('firstName') || '';
+        const lastName = localStorage.getItem('lastName') || '';
+        setUsername(firstName + ' ' + lastName);
     }, [username])
 
     return (
@@ -22,14 +21,12 @@ const Header = () => {
                 <span className='text-sm'>
                     Welcome, {username}
                 </span>
-                <div className='flex items-center justify-center w-8 h-8 rounded-full bg-[#056721]'>
+                <div className='flex items-center justify-center w-8 h-8 rounded-full bg-[#2e8cca]'>
                     <span className='text-white'>
-                        {/* <Logout username={username} /> */}
+                        <Logout username={username} />
                     </span>
                 </div>
             </div>
         </header>
     )
 }
-
-export default Header
