@@ -12,8 +12,8 @@ export default function Sidebar() {
     const pathname = usePathname();
 
     return (
-        <div className="w-16 md:w-3/12 bg-[#2e8cca] h-screen pt-40 md:pt-0 md:py-4 md:max-w-xs">
-            <div className='hidden md:block md:m-4'>
+        <div className="w-16 lg:w-3/12 bg-[#2e8cca] h-screen pt-40 lg:pt-0 lg:py-4 lg:max-w-xs">
+            <div className='hidden lg:block lg:m-4'>
                 <div className='py-10 flex justify-center'>
                     {/* <Image src={SidebarLogo} alt="SideBar Image" width={100} height={100} /> */}
                 </div>
@@ -27,13 +27,13 @@ export default function Sidebar() {
                 <ul>
                     {sidebarMenuItems['admin'].map(({ url, title, icon }) => (
                         <li key={url}
-                            className='m-2 flex items-center justify-center sm:justify-start sm:m-2'>
+                            className='m-2 flex items-center justify-center lg:justify-start lg:m-2'>
                             <Link href={url}
-                                className={`w-full flex items-center md:px-2 space-x-2 rounded-md cursor-pointer text-white after:text-green-800  hover:text-green-500
+                                className={`w-full flex items-center lg:px-2 space-x-2 rounded-md cursor-pointer text-white after:text-green-800  hover:text-green-500
                                 ${pathname === url && 'bg-white text-green-500'}`}>
                                 <div className='flex items-center w-56 h-10'>
-                                    <div className='px-4 flex items-center justify-center rounded-md'>{icon}</div>
-                                    <span className='hidden md:block text-md'>{title}</span>
+                                    <div className='px-3 flex items-center justify-center rounded-md'>{icon}</div>
+                                    <span className='hidden lg:block text-[14px]'>{title}</span>
                                 </div>
                             </Link>
                         </li>

@@ -1,11 +1,7 @@
-'use client';
-
-import Login from '@/components/Login';
+import Login from './Login';
 
 const Home = () => {
-  return (
-    <Login />
-  )
+  return <Login />
 }
 
 export default Home

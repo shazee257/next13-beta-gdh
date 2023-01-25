@@ -1,8 +1,10 @@
+'use client';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import Paper from '@mui/material/Paper';
-import { fetchApi } from '@/utils';
+import fetchAPI from '@/components/fetchAPI';
 import Link from 'next/link';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,7 +19,7 @@ export default function Home() {
         e.preventDefault();
 
         try {
-            const response = await fetchApi({
+            const response = await fetchAPI({
                 method: 'post',
                 endPoint: 'Clients/login',
                 data: { email, password },

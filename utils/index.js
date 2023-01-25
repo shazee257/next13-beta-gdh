@@ -1,30 +1,31 @@
-import https from 'https';
-const axios = require('axios').default;
+const moment = require('moment');
+// import https from 'https';
+// const axios = require('axios').default;
 import { MdOutlineDashboard } from "react-icons/md";
 import { FaUserMd, FaUserInjured, FaUserTie, FaCalendarAlt, FaExchangeAlt, FaCalendarCheck, FaEdit } from "react-icons/fa";
 
-axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
-export function fetchApi({ method, endPoint, data, params }) {
-    const headers = {
-        'Content-Type': 'application/json',
-    };
+// axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
+// export function fetchApi({ method, endPoint, data, params }) {
+//     const headers = {
+//         'Content-Type': 'application/json',
+//     };
 
-    const config = {
-        method,
-        url: `${process.env.NEXT_PUBLIC_BaseURL}/${endPoint}`,
-        headers,
-        params: params ? params : {},
-        data: data ? data : {},
-    };
+//     const config = {
+//         method,
+//         url: `${process.env.NEXT_PUBLIC_BaseURL}/${endPoint}`,
+//         headers,
+//         params: params ? params : {},
+//         data: data ? data : {},
+//     };
 
-    return axios(config);
-}
+//     return axios(config);
+// }
 
 export const sidebarMenuItems = {
     admin: [
         {
             url: '/admin',
-            title: 'Admin Dashboard',
+            title: 'Dashboard',
             icon: <MdOutlineDashboard size={24} />
         },
         {
@@ -78,3 +79,5 @@ export const sidebarMenuItems = {
     assistant: [],
     patient: []
 }
+
+export const formatDate = (date) => moment(date).format('DD/MM/YYYY');
